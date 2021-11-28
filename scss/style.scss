@@ -1,0 +1,156 @@
+// Variables
+$bg_color: black;
+$full_width:100%;
+
+// mixin    
+
+@mixin button( $border-color){
+    border:2px solid black;
+    font-size: 20px;
+    width: $full_width;
+    margin: 10px 0px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+@mixin text {
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+// Element
+.wrapper{
+     width:375px;
+    margin: 0 auto; 
+    height: 1658px;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    
+}
+.left{
+    float: left;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+.right{
+    float: right;
+}
+.right a{
+    color: $bg_color;
+}
+.profile{
+    width:$full_width;
+    float: left;
+    text-align: center;
+}
+.content{
+    padding: 20px;
+    margin-top: 30px;
+}
+.about p{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Comfortaa', cursive;
+}
+h6{
+    @include text();
+}
+ .button button{
+    @include button(black);
+}
+.button a{
+    color: white;
+    text-decoration: none;
+}
+.btn_light a{
+    color: black;
+}
+.btn_dark{
+    @include text();
+    background: black;
+    color: white;
+}
+.btn_light{
+    @include text();
+    background: white;
+}
+.gallery{
+    width:$full_width;
+    float: left;
+    margin: 20px 0px;
+}
+.gallery img{
+    width: $full_width;
+}
+.photos{
+    box-sizing: border-box;
+    display: flex;
+}
+.col_1{
+    width: 50%;
+    margin:5px;
+}
+.g_1{
+    margin: 5px 0px;
+}
+.g_2{
+    @extend .g_1;
+}
+.col_2{
+   @extend .col_1;
+}
+.footer{
+    width: $full_width;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px 0px;
+    
+}
+.row{
+    @extend .photos;
+    padding: 15px 0px;
+}
+.block{
+    display: block;
+}
+.home{
+    width: 25%;
+    margin: 10px;
+    padding: 6px;
+    font-size: 35px;
+}
+.home a{
+    font-size: 35px;
+    color: $bg_color;
+}
+.end{
+    text-align: center;
+
+}
+@media screen and(min-width: 320px) and (max-width:600px) {
+    .wrapper{
+        max-width: 100%;
+        height: 1650px;
+    }
+    // .icons{
+    //     padding: 0px;
+    //     // width: 100%;
+    //     position: fixed;
+    //     top: 535px;
+    //     background: white;
+    // }
+   
+}
+@media screen and (min-width:6001px) and (max-width:1200px){
+    .wrapper{
+        min-width:375px;
+        height: 1629px;
+    }
+    
+}
